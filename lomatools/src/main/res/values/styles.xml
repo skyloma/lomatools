@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+
+    <style name="bt_accent">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button.Inverse</item>
+        <item name="android:background">@drawable/btn_accent</item>
+    </style>
+
+    <style name="bt_primary">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button.Inverse</item>
+        <item name="android:background">@drawable/btn_primary</item>
+    </style>
+    <style name="bt_white">
+        <item name="android:textColor">@android:color/secondary_text_light</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button</item>
+        <item name="android:background">@drawable/btn_white</item>
+    </style>
+</resources>
