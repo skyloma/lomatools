@@ -9,8 +9,6 @@ import java.util.Date;
 
 /**
  * 时间工具类
- *
- * @author way
  */
 @SuppressLint("SimpleDateFormat")
 public class TimeUtils {
