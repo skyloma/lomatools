@@ -5,12 +5,13 @@
                >
 
     <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar"
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:indeterminateDrawable="@drawable/rotate_loading_github"
         android:indeterminateDuration="1800" />
+
     <TextView
         android:id="@+id/tip"
         android:layout_width="wrap_content"

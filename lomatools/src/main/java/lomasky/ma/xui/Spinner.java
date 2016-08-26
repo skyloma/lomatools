@@ -30,15 +30,15 @@ import lomasky.ma.R;
 public class Spinner extends TextView implements CompoundButton.OnClickListener, AdapterView.OnItemClickListener {
 
 
-    private  String android_namespace="http://schemas.android.com/apk/res/android";
+    private String android_namespace = "http://schemas.android.com/apk/res/android";
     private ColorStateList dividerColor;
 
 
-    public void setArrowDrawable(Context context,int mArrowDrawable) {
-        this.mArrowDrawable = ContextCompat.getDrawable(context,mArrowDrawable);
+    public void setArrowDrawable(Context context, int mArrowDrawable) {
+        this.mArrowDrawable = ContextCompat.getDrawable(context, mArrowDrawable);
     }
 
-    private  Drawable mArrowDrawable;
+    private Drawable mArrowDrawable;
     private int arrowSize = 15;
     private AccelerateDecelerateInterpolator arrowInterpolator;
     private DividerDrawable dividerDrawable;
@@ -92,7 +92,7 @@ public class Spinner extends TextView implements CompoundButton.OnClickListener,
 
     private void init(AttributeSet attrs, int defStyle, Context context) {
 
-        setPadding(0, Density.dp2px(context, 8), 0, Density.dp2px(context, 8));
+        setPadding(Density.dp2px(context, 16), Density.dp2px(context, 8), 0, Density.dp2px(context, 8));
         popWindow = new SpinerPopWindow(super.getContext());
 
         popWindow.setAnchorView(this);
@@ -102,7 +102,8 @@ public class Spinner extends TextView implements CompoundButton.OnClickListener,
 
 
 
-          background=   attrs.getAttributeResourceValue(android_namespace,"background",0) ;
+
+        background = attrs.getAttributeResourceValue(android_namespace, "background", 0);
 
 
         int[][] states = new int[][]{
@@ -116,25 +117,24 @@ public class Spinner extends TextView implements CompoundButton.OnClickListener,
 
         dividerColor = new ColorStateList(states, colors);
         arrowInterpolator = new AccelerateDecelerateInterpolator();
-        mArrowDrawable = new ArrowDrawable(ArrowDrawable.MODE_DOWN, Density.dp2px(context,8.0f), dividerColor, 200, arrowInterpolator, true);
+        mArrowDrawable = new ArrowDrawable(ArrowDrawable.MODE_DOWN, Density.dp2px(context, 8.0f), dividerColor, 200, arrowInterpolator, true);
         mArrowDrawable.setCallback(this);
 
         dividerDrawable = new DividerDrawable(Density.dp2px(context, 1), dividerColor, 100);
-        if (background==0){
+        if (background == 0) {
             if (Build.VERSION.SDK_INT >= 16) {
                 setBackground(dividerDrawable);
             } else {
                 setBackgroundDrawable(dividerDrawable);
             }
 
-        }else {
-                setBackgroundResource(background);
+        } else {
+            setBackgroundResource(background);
 
         }
 
 
     }
-
 
 
     @Override
